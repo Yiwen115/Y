@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>永續發展知識王</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="https://yiwen115.github.io/YIWEN/" class="home-link">
+            <svg class="home-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" fill="currentColor"/>
+            </svg>
+            回到首頁
+        </a>
+    </nav>
+
+    <!-- 開始畫面 -->
+    <div class="screen animate__animated animate__fadeIn" id="startScreen">
+        <div class="start-content">
+            <h1 class="animate__animated animate__bounceIn">永續發展知識王</h1>
+            <p class="subtitle">測試你對SDGs與淨零轉型的認識</p>
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="highlight">20</span>
+                    <span>題目</span>
+                </div>
+                <div class="info-item">
+                    <span class="highlight">30</span>
+                    <span>秒</span>
+                </div>
+                <div class="info-item">
+                    <span class="highlight">+3</span>
+                    <span>秒/答對</span>
+                </div>
+            </div>
+            <button onclick="startGame()" class="btn-start animate__animated animate__pulse animate__infinite">開始挑戰</button>
+        </div>
+    </div>
+
+    <!-- 遊戲畫面 -->
+    <div class="screen" id="gameScreen" style="display: none;">
+        <div class="game-header">
+            <div class="game-info">
+                <div class="score-box">
+                    <span class="score-label">分數</span>
+                    <span id="scoreValue" class="score-value">0</span>
+                </div>
+                <div class="timer-box">
+                    <span class="timer-icon">⏱</span>
+                    <span id="timeValue" class="timer-value">30</span>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <div class="question-count">第 <span id="questionNumber">1</span>/20 題</div>
+            </div>
+        </div>
+
+        <div class="question-container animate__animated animate__fadeIn">
+            <div class="question" id="questionText"></div>
+        </div>
+
+        <div class="options-container">
+            <button class="option animate__animated" data-index="0">
+                <span class="option-label">A</span>
+                <span class="option-text"></span>
+            </button>
+            <button class="option animate__animated" data-index="1">
+                <span class="option-label">B</span>
+                <span class="option-text"></span>
+            </button>
+            <button class="option animate__animated" data-index="2">
+                <span class="option-label">C</span>
+                <span class="option-text"></span>
+            </button>
+            <button class="option animate__animated" data-index="3">
+                <span class="option-label">D</span>
+                <span class="option-text"></span>
+            </button>
+        </div>
+
+        <div class="explanation animate__animated animate__fadeIn" id="explanationText"></div>
+    </div>
+
+    <!-- 結束畫面 -->
+    <div class="screen" id="endScreen" style="display: none;">
+        <div class="end-content animate__animated animate__zoomIn">
+            <h2>遊戲結束！</h2>
+            <div class="final-score-container">
+                <div class="final-score">
+                    <span class="score-label">最終得分</span>
+                    <span id="finalScore">0</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button onclick="restartGame()" class="btn-restart">再玩一次</button>
+                <a href="https://yiwen115.github.io/YIWEN/" class="btn-home">回到首頁</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
